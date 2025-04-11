@@ -39,6 +39,6 @@ If you don’t have it, install **App Installer** from the [Microsoft Store](htt
 
 ---
 
-## 📄 How to Use
+## 📄 Search for Winget Apps
 
-### Option 1: Run Manually
+[Winget.run](https://winget.run/)
