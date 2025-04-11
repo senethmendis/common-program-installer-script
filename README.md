@@ -1,5 +1,5 @@
 # ⚙️ My Bulk Windows App Installer CLI
-
+---
 **Author:** Seneth Mendis Kumarasingha
 **GitHub:** [Seneth Mendis](https://github.com/senethmendis)
 
