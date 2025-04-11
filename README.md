@@ -1,44 +1,67 @@
-# 🚀 Bulk Software Installer for Windows
+# ⚙️ My Bulk Windows App Installer CLI
 
-This PowerShell script installs a list of commonly used applications on Windows using the **Windows Package Manager (winget)**. It's perfect for setting up a new PC or quickly configuring your environment.
+This tool is a simple command-line interface (CLI) that allows you to choose between a **Gaming Setup** or a **Web Development Setup** and installs a collection of essential applications using `winget`.
 
----
-
-## 📦 Applications Installed
-
-This script installs the following apps:
-
--   Google Chrome
--   Visual Studio Code
--   Node.js LTS
--   Git
--   7-Zip
--   VLC Media Player
--   Discord
--   TeamSpeak
--   Steam
--   Postman
--   GitHub Desktop
--   Windows Terminal
+It has been compiled into a `.exe` file for easy use and even includes a custom icon!
 
 ---
 
-## 🛠 Requirements
+## 📦 What's Included
 
--   Windows 10 or 11
--   PowerShell 5.0+
--   `winget` (Windows Package Manager)
+### 🎮 Gaming Setup Includes:
+- Google Chrome
+- Discord
+- TeamSpeak
+- Steam
+- Epic Games Launcher
+- Ubisoft Connect
+- EA Desktop App
+- Razer Cortex
+- MSI Afterburner
+- GPU-Z
+- CrystalDiskInfo
+- NVIDIA GeForce Experience
+- HWiNFO
+- 7-Zip
+- VLC Media Player
+- Xbox App
+- Windows Terminal
 
-> ✅ You likely already have `winget` if you're running Windows 10/11. To verify, open PowerShell and run:
->
-> ```powershell
-> winget --version
-> ```
-
-If you don’t have it, install **App Installer** from the [Microsoft Store](https://www.microsoft.com/store/productId/9NBLGGH4NNS1).
+### 💻 Web Developer Setup Includes:
+- Google Chrome
+- Mozilla Firefox
+- Microsoft Edge Dev
+- Visual Studio Code
+- Node.js LTS
+- Git & GitHub Desktop
+- Postman
+- Docker Desktop
+- Notepad++
+- MongoDB Compass
+- MySQL Workbench
+- RedisInsight
+- SQLite Browser
+- 7-Zip
+- VLC Media Player
+- Figma
+- Windows Terminal
 
 ---
 
-## 📄 Search for Winget Apps
+## 🚀 How to Use
 
-[Winget.run](https://winget.run/)
+### ✅ Method 1: Use the EXE file
+
+1. Download `ChooseInstaller.exe`
+2. Double-click to run it
+3. Choose your setup type (1 for Gaming, 2 for Web Development)
+
+### ✅ Method 2: Run from PowerShell (script version)
+
+1. Open PowerShell
+2. Navigate to the folder containing `choose-install.ps1`
+3. Run:
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\choose-install.ps1
