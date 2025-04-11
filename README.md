@@ -65,3 +65,8 @@ It has been compiled into a `.exe` file for easy use and even includes a custom 
 ```powershell
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .\choose-install.ps1
+
+---
+**Author:** Seneth Mendis Kumarasingha
+
+**GitHub:** [Seneth Mendis](https://github.com/senethmendis)
