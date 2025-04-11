@@ -1,5 +1,8 @@
 # ⚙️ My Bulk Windows App Installer CLI
 
+**Author:** Seneth Mendis Kumarasingha
+**GitHub:** [Seneth Mendis](https://github.com/senethmendis)
+
 This tool is a simple command-line interface (CLI) that allows you to choose between a **Gaming Setup** or a **Web Development Setup** and installs a collection of essential applications using `winget`.
 
 It has been compiled into a `.exe` file for easy use and even includes a custom icon!
@@ -66,7 +69,4 @@ It has been compiled into a `.exe` file for easy use and even includes a custom 
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .\choose-install.ps1
 
----
-**Author:** Seneth Mendis Kumarasingha
 
-**GitHub:** [Seneth Mendis](https://github.com/senethmendis)
