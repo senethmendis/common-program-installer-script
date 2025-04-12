@@ -55,7 +55,7 @@ It has been compiled into a `.exe` file for easy use and even includes a custom 
 
 ### ✅ Method 1: Use the EXE file
 
-1. Download `ChooseInstaller.exe`
+1. Download `Installer.exe`
 2. Double-click to run it
 3. Choose your setup type (1 for Gaming, 2 for Web Development)
 
