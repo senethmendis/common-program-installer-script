@@ -62,7 +62,7 @@ It has been compiled into a `.exe` file for easy use and even includes a custom 
 ### ✅ Method 2: Run from PowerShell (script version)
 
 1. Open PowerShell
-2. Navigate to the folder containing `choose-install.ps1`
+2. Navigate to the folder containing `all-in-one-installer.ps1`
 3. Run:
 
 ```powershell
