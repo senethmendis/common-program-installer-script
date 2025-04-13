@@ -1,7 +1,7 @@
 # choose-install.ps1
 # -------------------
 # Simple CLI tool to install app packages via winget
-# Choose from Gaming, Web Dev, or My Go-To setup
+# Choose from Gaming, Minimal Gaming, Web Dev, or Go-To setups
 
 function Show-Menu {
     Clear-Host
@@ -9,15 +9,29 @@ function Show-Menu {
     Write-Host "   Software Installation Tool"
     Write-Host "==============================="
     Write-Host "1. Gaming Setup"
-    Write-Host "2. Web Development Setup"
-    Write-Host "3. My Go-To Setup"
-    Write-Host "4. Exit"
+    Write-Host "2. Minimal Gaming Setup"
+    Write-Host "3. Web Development Setup"
+    Write-Host "4. My Go-To Setup"
+    Write-Host "5. Exit"
     Write-Host ""
+    Write-Host "==============================="
+}
+
+function Show-Spinner {
+    $spinner = @("|", "/", "-", "\")
+    for ($i = 0; $i -lt 10; $i++) {
+        foreach ($frame in $spinner) {
+            Write-Host -NoNewline "`rLoading $frame"
+            Start-Sleep -Milliseconds 100
+        }
+    }
+    Write-Host "`r               `r"  # Clear the line
 }
 
 function Install-Apps($apps) {
     foreach ($app in $apps) {
         Write-Host "`nInstalling $app..." -ForegroundColor Yellow
+        Show-Spinner
         winget install --id=$app -e --accept-package-agreements --accept-source-agreements
     }
     Write-Host "`nAll selected apps installed!" -ForegroundColor Green
@@ -25,7 +39,6 @@ function Install-Apps($apps) {
 
 # App lists
 $gamingApps = @(
-    "Google.Chrome",
     "Discord.Discord",
     "TeamSpeakSystems.TeamSpeakClient",
     "Valve.Steam",
@@ -42,6 +55,14 @@ $gamingApps = @(
     "VideoLAN.VLC",
     "Microsoft.XboxApp",
     "Microsoft.WindowsTerminal"
+)
+
+$minimalForGamer = @(
+    "Discord.Discord",
+    "TeamSpeakSystems.TeamSpeakClient",
+    "Valve.Steam",
+    "Nvidia.GeForceExperience",
+    "7zip.7zip"
 )
 
 $webDevApps = @(
@@ -83,7 +104,7 @@ $myGoToapps = @(
 # Start CLI loop
 do {
     Show-Menu
-    $choice = Read-Host "Select an option (1-4)"
+    $choice = Read-Host "Select an option (1-5)"
 
     switch ($choice) {
         "1" {
@@ -91,23 +112,27 @@ do {
             Install-Apps -apps $gamingApps
         }
         "2" {
+            Write-Host "`nStarting Minimal Gaming Setup..." -ForegroundColor Cyan
+            Install-Apps -apps $minimalForGamer
+        }
+        "3" {
             Write-Host "`nStarting Web Development Setup..." -ForegroundColor Cyan
             Install-Apps -apps $webDevApps
         }
-        "3" {
+        "4" {
             Write-Host "`nStarting My Go-To Setup..." -ForegroundColor Cyan
             Install-Apps -apps $myGoToapps
         }
-        "4" {
+        "5" {
             Write-Host "`nExiting. Goodbye!" -ForegroundColor Magenta
         }
         default {
-            Write-Host "`nInvalid option. Please choose 1, 2, 3, or 4." -ForegroundColor Red
+            Write-Host "`nInvalid option. Please choose 1 to 5." -ForegroundColor Red
         }
     }
 
-    if ($choice -ne "4") {
+    if ($choice -ne "5") {
         Read-Host "`nPress Enter to return to the menu..."
     }
 }
-while ($choice -ne "4")
+while ($choice -ne "5")
