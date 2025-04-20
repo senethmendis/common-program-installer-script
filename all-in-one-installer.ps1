@@ -30,12 +30,20 @@ function Show-Spinner {
 
 function Install-Apps($apps) {
     foreach ($app in $apps) {
-        Write-Host "`nInstalling $app..." -ForegroundColor Yellow
-        Show-Spinner
-        winget install --id=$app -e --accept-package-agreements --accept-source-agreements
+        # Check if the app is already installed
+        $isInstalled = winget list --id=$app -e | Select-String $app
+
+        if ($isInstalled) {
+            Write-Host "`n$app is already installed. Skipping..." -ForegroundColor Gray
+        } else {
+            Write-Host "`nInstalling $app..." -ForegroundColor Yellow
+            Show-Spinner
+            winget install --id=$app -e --accept-package-agreements --accept-source-agreements
+        }
     }
-    Write-Host "`nAll selected apps installed!" -ForegroundColor Green
+    Write-Host "`nAll selected apps processed!" -ForegroundColor Green
 }
+
 
 # App lists
 $gamingApps = @(
