@@ -1,7 +1,7 @@
-# choose-install.ps1
 # -------------------
 # Simple CLI tool to install app packages via winget
 # Choose from Gaming, Minimal Gaming, Web Dev, or Go-To setups
+# -------------------
 
 function Show-Menu {
     Clear-Host
